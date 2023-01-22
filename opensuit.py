@@ -1,9 +1,9 @@
-import sys, json, time
+import sys, json
 print("OpenSUIT - An open source clone of SUIT.")
 
 flags = [] # --no-cache -n 
 
-def parse_args():
+def parseargs():
     global flags
     args = sys.argv.__len__()
     if args == 1:
@@ -37,19 +37,18 @@ def fetch(user):
 
     mystr = mybytes.decode("utf8")
     fp.close()
-
-    return mystr
-
-def parsefetch(data):
-    jsondata = json.loads(data)
+    jsondata = json.loads(mystr)
     if jsondata["Error"] == True:
         print("SUI encountered an error.")
         quit()
     return jsondata["Username"] + ": " + jsondata["ID"]
 
 
+    
+
+
 
 if __name__ == "__main__":
-    uname = parse_args()
-    print(parsefetch(fetch(uname)))
+    uname = parseargs()
+    print(fetch(uname))
 
