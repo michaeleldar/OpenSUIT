@@ -1,5 +1,5 @@
 # OpenSUIT
-## An alternative to SUIT. 
+## An open soure alternative to SUIT. 
 ## Find out a scratch user's ID or Username.
 
 ## Download
@@ -23,3 +23,4 @@ Output:
 ```
 griffpatch: 1882674
 ```
+Note: Caching is not yet implemented
