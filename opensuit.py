@@ -3,7 +3,7 @@ import json
 import sys
 import os
 
-def fetch(user, no_cache=False):
+def fetch(user, no_cache=True):
     cache = []
     if not no_cache:
         if os.path.exists("suit_cache.json"):
