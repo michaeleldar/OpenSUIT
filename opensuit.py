@@ -44,8 +44,8 @@ def fetch(user, no_cache=True):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="OpenSUIT - An open source clone of SUIT.")
-    parser.add_argument("--user", "-u", help="Can be a username or ID")
-    parser.add_argument("--no-cache", "-n", action="store_true", help="Disables the local cache")
+    parser.add_argument("-u", "--user", help="Can be a username or ID")
+    parser.add_argument("-n", "--no-cache", action="store_true", help="Disables the local cache")
 
     args = parser.parse_args()
     if args.user == None:
