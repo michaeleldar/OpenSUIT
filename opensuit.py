@@ -2,6 +2,8 @@ import argparse
 import json
 import sys
 import os
+import urllib.request
+
 
 def fetch(user, no_cache=True):
     cache = []
@@ -18,8 +20,6 @@ def fetch(user, no_cache=True):
         isid = True
     except Exception:
         isid = False
-
-    import urllib.request
 
     if isid:
         fp = urllib.request.urlopen(f"https://sui.sid72020123.repl.co/get_user/{user}")
@@ -45,7 +45,7 @@ def fetch(user, no_cache=True):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="OpenSUIT - An open source clone of SUIT.")
     parser.add_argument("--user", "-u", help="Can be a username or ID")
-    parser.add_argument("--no-cache", "-n", action="store_true")
+    parser.add_argument("--no-cache", "-n", action="store_true", help="Disables the local cache")
 
     args = parser.parse_args()
     if args.user == None:
