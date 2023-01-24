@@ -1,3 +1,6 @@
 .DS_Store
 suit_cache.json
 __pycache__
+opensuit.spec
+build
+dist
