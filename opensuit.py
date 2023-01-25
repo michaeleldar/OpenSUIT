@@ -46,6 +46,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="OpenSUIT - An open source clone of SUIT.")
     parser.add_argument("-u", "--user", help="Can be a username or ID")
     parser.add_argument("-n", "--no-cache", action="store_true", help="Disables the local cache")
+    parser.add_argument("-r", "--raw", action="store_true", help="Print out the raw json data")
 
     args = parser.parse_args()
     if args.user == None:
@@ -54,4 +55,7 @@ if __name__ == "__main__":
         user = args.user
 
     info = fetch(user, args.no_cache)
-    print(f"{info['Username']}: {info['ID']}")
+    if args.raw:
+        print(info)
+    else:
+        print(f"{info['Username']}: {info['ID']}")
