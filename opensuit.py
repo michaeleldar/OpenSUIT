@@ -22,9 +22,9 @@ def fetch(user, no_cache=True):
         isid = False
 
     if isid:
-        fp = urllib.request.urlopen(f"https://sui.sid72020123.repl.co/get_user/{user}")
+        fp = urllib.request.urlopen(f"https://sui.scratchconnect.eu.org/get_user/{user}")
     else:
-        fp = urllib.request.urlopen(f"https://sui.sid72020123.repl.co/get_id/{user}")
+        fp = urllib.request.urlopen(f"https://sui.scratchconnect.eu.org/get_id/{user}")
 
     response = json.loads(fp.read().decode("utf8"))
     fp.close()
